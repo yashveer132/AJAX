@@ -1,0 +1,37 @@
+[
+  {
+    "id": "birmohan-singh",
+    "name": "Dr. Birmohan Singh",
+    "specialty": "System Analysis and Design"
+  },
+  {
+    "id": "damanpreet-singh",
+    "name": "Dr. Damanpreet Singh",
+    "specialty": "Machine Learning"
+  },
+  {
+    "id": "major-singh-goraya",
+    "name": "Dr. Major Singh Goraya",
+    "specialty": "IOT and Machine Learning"
+  },
+  {
+    "id": "manoj-sachan",
+    "name": "Dr. Manoj Sachan",
+    "specialty": "Artificial Neural Networks"
+  },
+  {
+    "id": "gurjinder-kaur",
+    "name": "Dr. Gurjinder Kaur",
+    "specialty": "Cloud Computing"
+  },
+  {
+    "id": "amar-nath",
+    "name": "Dr. Amar Nath",
+    "specialty": "Robotics"
+  },
+  {
+    "id": "jagdeep-singh",
+    "name": "Dr. Jagdeep Singh",
+    "specialty": "AI Specialist"
+  }
+]

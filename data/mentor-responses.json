@@ -1,0 +1,37 @@
+{
+  "birmohan-singh": [
+    "System Analysis involves understanding user requirements and creating structured solutions.",
+    "In design, it’s essential to define system architecture, interfaces, and data flows clearly.",
+    "Always follow structured methodologies such as SDLC to ensure efficient system design."
+  ],
+  "damanpreet-singh": [
+    "In machine learning, feature selection is critical for model performance.",
+    "Supervised learning techniques like regression and classification are widely used.",
+    "Make sure to experiment with hyperparameters to improve model accuracy."
+  ],
+  "major-singh-goraya": [
+    "IoT systems require seamless communication between sensors and cloud platforms.",
+    "Machine learning can enhance IoT by providing predictive maintenance and automation.",
+    "Focus on low-latency networks for efficient IoT data transmission."
+  ],
+  "manoj-sachan": [
+    "Artificial neural networks excel at handling complex data patterns.",
+    "Ensure you have sufficient data for training deep neural networks effectively.",
+    "Experiment with different architectures like CNNs and RNNs to solve specific tasks."
+  ],
+  "gurjinder-kaur": [
+    "Cloud computing offers scalable solutions for businesses of all sizes.",
+    "Explore containerization with Docker and Kubernetes for efficient cloud management.",
+    "Security and cost management are crucial aspects of cloud computing."
+  ],
+  "amar-nath": [
+    "Robotics integrates mechanics, electronics, and programming for automation.",
+    "Learning ROS (Robot Operating System) is essential for modern robotics development.",
+    "Focus on sensor integration for better autonomous navigation and control."
+  ],
+  "jagdeep-singh": [
+    "AI specialists work on advanced algorithms for tasks like vision and NLP.",
+    "Deep learning frameworks like TensorFlow and PyTorch are highly recommended.",
+    "Stay updated on ethical AI and responsible AI practices."
+  ]
+}

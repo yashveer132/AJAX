@@ -1,0 +1,37 @@
+[
+  {
+    "question": "What is your primary area of interest?",
+    "answers": [
+      "Artificial Intelligence",
+      "Web Development",
+      "Data Science",
+      "Cybersecurity"
+    ]
+  },
+  {
+    "question": "What is your current academic year?",
+    "answers": ["1st Year", "2nd Year", "3rd Year", "4th Year"]
+  },
+  {
+    "question": "What type of guidance are you looking for?",
+    "answers": [
+      "Career Advice",
+      "Technical Skills",
+      "Research Opportunities",
+      "Industry Connections"
+    ]
+  },
+  {
+    "question": "What is your preferred mentorship style?",
+    "answers": [
+      "Hands-on Practical",
+      "Theoretical Discussion",
+      "Project-based",
+      "Career-oriented"
+    ]
+  },
+  {
+    "question": "How often would you like to meet with your mentor?",
+    "answers": ["Weekly", "Bi-weekly", "Monthly", "As needed"]
+  }
+]

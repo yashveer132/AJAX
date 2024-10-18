@@ -1,0 +1,59 @@
+[
+  {
+    "id": "birmohan-singh",
+    "name": "Dr. Birmohan Singh",
+    "specialization": "System Analysis and Design",
+    "image": "../images/mentor1.jpg",
+    "bio": "Expert in system analysis, with extensive experience in guiding IT projects.",
+     "spotlight": "yes"
+  },
+  {
+    "id": "damanpreet-singh",
+    "name": "Dr. Damanpreet Singh",
+    "specialization": "Machine Learning",
+    "image": "../images/mentor2.jpg",
+    
+    "bio": "Specializes in machine learning algorithms and their real-world applications."
+  },
+  {
+    "id": "major-singh-goraya",
+    "name": "Dr. Major Singh Goraya",
+    "specialization": "IOT and Machine Learning",
+    "image": "../images/mentor3.jpg",
+    
+    "bio": "Combines expertise in IoT and machine learning to design innovative solutions."
+  },
+  {
+    "id": "manoj-sachan",
+    "name": "Dr. Manoj Sachan",
+    "specialization": "Artificial Neural Networks",
+    "image": "../images/mentor4.jpg",
+    
+    "bio": "Has extensive research experience in neural networks and deep learning."
+  },
+  {
+    "id": "gurjinder-kaur",
+    "name": "Dr. Gurjinder Kaur",
+    "specialization": "Cloud Computing",
+    "image": "../images/mentor5.jpg",
+    
+    "bio": "Focuses on cloud computing technologies and solutions for modern businesses."
+  },
+  {
+    "id": "amar-nath",
+    "name": "Dr. Amar Nath",
+    "specialization": "Robotics",
+    "image": "../images/mentor6.jpg",
+    
+    "bio": "Researcher in the field of robotics, with practical experience in automation."
+  },
+  {
+    "id": "jagdeep-singh",
+    "name": "Dr. Jagdeep Singh",
+    "specialization": "AI Specialist",
+    "image": "../images/mentor7.jpg",
+    
+    "bio": "AI specialist passionate about advancing artificial intelligence research."
+   
+  }
+]

@@ -1,100 +1,97 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const mentorCards = document.querySelectorAll(".mentor-card");
-  const testimonials = document.querySelectorAll(".testimonial");
-  const spotlightImage = document.querySelector(".spotlight-image");
+  const mentorsGrid = document.querySelector(".mentors-grid");
+  const spotlightContainer = document.querySelector(".spotlight-container");
+  const testimonialsContainer = document.querySelector(".testimonial-slider");
 
-  const animateOnScroll = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = "running";
-        observer.unobserve(entry.target);
-      }
+  const specializationFilter = document.getElementById("specialization-filter");
+
+  let mentorsData = [];
+
+  Promise.all([
+    fetch("../data/mentors.json").then((res) => res.json()),
+    fetch("../data/testimonials.json").then((res) => res.json()),
+  ])
+    .then(([mentors, testimonials]) => {
+      mentorsData = mentors;
+      displayMentors(mentors);
+      displaySpotlight(mentors);
+      displayTestimonials(testimonials);
+    })
+    .catch((error) => console.error("Error loading data:", error));
+
+  const displayMentors = (mentors) => {
+    mentorsGrid.innerHTML = "";
+    mentors.forEach((mentor) => {
+      const card = createMentorCard(mentor);
+      mentorsGrid.appendChild(card);
     });
   };
 
-  const observer = new IntersectionObserver(animateOnScroll, {
-    root: null,
-    threshold: 0.1,
-    rootMargin: "0px",
-  });
+  const displaySpotlight = (mentors) => {
+    const spotlightMentor = mentors.find(
+      (mentor) => mentor.spotlight === "yes"
+    );
+    if (spotlightMentor) {
+      const spotlight = createSpotlight(spotlightMentor);
+      spotlightContainer.innerHTML = spotlight;
+    }
+  };
 
-  mentorCards.forEach((card, index) => {
-    card.style.animationDelay = `${index * 0.1}s`;
-    card.style.animationPlayState = "paused";
-    observer.observe(card);
-  });
-
-  testimonials.forEach((testimonial, index) => {
-    testimonial.style.animationDelay = `${index * 0.1}s`;
-    testimonial.style.animationPlayState = "paused";
-    observer.observe(testimonial);
-  });
-
-  spotlightImage.style.animationPlayState = "paused";
-  observer.observe(spotlightImage);
-
-  const applyFiltersBtn = document.getElementById("apply-filters");
-  const specializationFilter = document.getElementById("specialization-filter");
-  const experienceFilter = document.getElementById("experience-filter");
-
-  applyFiltersBtn.addEventListener("click", () => {
-    const selectedSpecialization = specializationFilter.value.toLowerCase();
-    const selectedExperience = experienceFilter.value;
-
-    mentorCards.forEach((card) => {
-      const cardSpecialization = card
-        .querySelector(".specialization")
-        .textContent.toLowerCase();
-      const cardExperienceText = card.querySelector(".experience").textContent;
-      const cardExperience = parseInt(cardExperienceText.match(/\d+/)[0]);
-
-      const specializationMatch =
-        !selectedSpecialization ||
-        cardSpecialization.includes(selectedSpecialization);
-      let experienceMatch = true;
-
-      if (selectedExperience) {
-        if (selectedExperience === "0-5") {
-          experienceMatch = cardExperience >= 0 && cardExperience <= 5;
-        } else if (selectedExperience === "5-10") {
-          experienceMatch = cardExperience > 5 && cardExperience <= 10;
-        } else if (selectedExperience === "10+") {
-          experienceMatch = cardExperience > 10;
-        }
-      }
-
-      if (specializationMatch && experienceMatch) {
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
-      }
+  const displayTestimonials = (testimonials) => {
+    testimonials.forEach((testimonial) => {
+      const testimonialElement = createTestimonial(testimonial);
+      testimonialsContainer.appendChild(testimonialElement);
     });
-  });
+  };
 
-  const testimonialSlider = document.querySelector(".testimonial-slider");
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+  const createMentorCard = (mentor) => {
+    const card = document.createElement("div");
+    card.classList.add("mentor-card", "animate-card");
+    card.innerHTML = `
+      <img src="${mentor.image}" alt="${mentor.name}" class="mentor-image" />
+      <div class="mentor-info">
+        <h3>${mentor.name}</h3>
+        <p class="specialization">${mentor.specialization}</p>
+        
+        <p class="bio">${mentor.bio}</p>
+      </div>
+      <a href="booking.html" class="book-session-btn">Book a Session</a>
+    `;
+    return card;
+  };
 
-  testimonialSlider.addEventListener("mousedown", (e) => {
-    isDown = true;
-    startX = e.pageX - testimonialSlider.offsetLeft;
-    scrollLeft = testimonialSlider.scrollLeft;
-  });
+  const createSpotlight = (mentor) => {
+    return `
+      <img src="${mentor.image}" alt="${mentor.name}" class="spotlight-image animate-image" />
+      <div class="spotlight-content">
+        <h3>${mentor.name}</h3>
+        <p class="specialization">${mentor.specialization}</p>
+        
+        <p class="bio">${mentor.bio}</p>
+        <a href="booking.html" class="cta-button animate-button">Book a Special Session</a>
+      </div>
+    `;
+  };
 
-  testimonialSlider.addEventListener("mouseleave", () => {
-    isDown = false;
-  });
+  const createTestimonial = (testimonial) => {
+    const testimonialDiv = document.createElement("div");
+    testimonialDiv.classList.add("testimonial", "animate-testimonial");
+    testimonialDiv.innerHTML = `
+      <p>"${testimonial.content}"</p>
+      <p class="student-name">- ${testimonial.student}</p>
+    `;
+    return testimonialDiv;
+  };
 
-  testimonialSlider.addEventListener("mouseup", () => {
-    isDown = false;
-  });
+  specializationFilter.addEventListener("change", () => {
+    const selectedSpecialization = specializationFilter.value.toLowerCase();
 
-  testimonialSlider.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - testimonialSlider.offsetLeft;
-    const walk = (x - startX) * 2;
-    testimonialSlider.scrollLeft = scrollLeft - walk;
+    const filteredMentors = mentorsData.filter(
+      (mentor) =>
+        !selectedSpecialization ||
+        mentor.specialization.toLowerCase().includes(selectedSpecialization)
+    );
+
+    displayMentors(filteredMentors);
   });
 });

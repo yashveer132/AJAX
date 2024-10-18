@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Dr. Anita Sharma",
+    "specialty": "Artificial Intelligence",
+    "image": "../images/female.png"
+  },
+  {
+    "name": "Prof. Rajesh Kumar",
+    "specialty": "Web Development",
+    "image": "../images/male.jpg"
+  },
+  {
+    "name": "Dr. Priya Patel",
+    "specialty": "Data Science",
+    "image": "../images/female.png"
+  },
+  {
+    "name": "Prof. Amit Singh",
+    "specialty": "Cybersecurity",
+    "image": "../images/male.jpg"
+  }
+]

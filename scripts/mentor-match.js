@@ -7,46 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultContainer = document.getElementById("result-container");
   const mentorMatchResult = document.getElementById("mentor-match-result");
 
-  const questions = [
-    {
-      question: "What is your primary area of interest?",
-      answers: [
-        "Artificial Intelligence",
-        "Web Development",
-        "Data Science",
-        "Cybersecurity",
-      ],
-    },
-    {
-      question: "What is your current academic year?",
-      answers: ["1st Year", "2nd Year", "3rd Year", "4th Year"],
-    },
-    {
-      question: "What type of guidance are you looking for?",
-      answers: [
-        "Career Advice",
-        "Technical Skills",
-        "Research Opportunities",
-        "Industry Connections",
-      ],
-    },
-    {
-      question: "What is your preferred mentorship style?",
-      answers: [
-        "Hands-on Practical",
-        "Theoretical Discussion",
-        "Project-based",
-        "Career-oriented",
-      ],
-    },
-    {
-      question: "How often would you like to meet with your mentor?",
-      answers: ["Weekly", "Bi-weekly", "Monthly", "As needed"],
-    },
-  ];
-
+  let questions = [];
+  let mentors = [];
   let currentQuestionIndex = 0;
   let userResponses = [];
+
+  function fetchData() {
+    Promise.all([
+      fetch("../data/quiz-questions.json").then((res) => res.json()),
+      fetch("../data/mentors-quiz.json").then((res) => res.json()),
+    ])
+      .then(([quizData, mentorData]) => {
+        questions = quizData;
+        mentors = mentorData;
+        startQuiz();
+      })
+      .catch((error) => console.error("Error loading data:", error));
+  }
 
   function startQuiz() {
     currentQuestionIndex = 0;
@@ -73,8 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function selectAnswer(e) {
     const selectedButton = e.target;
-    const allButtons = answerButtons.getElementsByTagName("button");
-    Array.from(allButtons).forEach((button) =>
+    Array.from(answerButtons.getElementsByTagName("button")).forEach((button) =>
       button.classList.remove("selected")
     );
     selectedButton.classList.add("selected");
@@ -106,38 +82,15 @@ document.addEventListener("DOMContentLoaded", () => {
     nextButton.style.display = "none";
     resultContainer.style.display = "block";
 
-    const mentors = [
-      {
-        name: "Dr. Anita Sharma",
-        specialty: "Artificial Intelligence",
-        image: "../images/female.png",
-      },
-      {
-        name: "Prof. Rajesh Kumar",
-        specialty: "Web Development",
-        image: "../images/male.jpg",
-      },
-      {
-        name: "Dr. Priya Patel",
-        specialty: "Data Science",
-        image: "../images/female.png",
-      },
-      {
-        name: "Prof. Amit Singh",
-        specialty: "Cybersecurity",
-        image: "../images/male.jpg",
-      },
-    ];
-
     const matchedMentor = mentors[Math.floor(Math.random() * mentors.length)];
 
     mentorMatchResult.innerHTML = `
-            <img src="${matchedMentor.image}" alt="${matchedMentor.name}">
-            <h3>${matchedMentor.name}</h3>
-            <p>Specialty: ${matchedMentor.specialty}</p>
-            <p>Based on your responses, we think ${matchedMentor.name} would be an excellent mentor for you!</p>
-        `;
+      <img src="${matchedMentor.image}" alt="${matchedMentor.name}">
+      <h3>${matchedMentor.name}</h3>
+      <p>Specialty: ${matchedMentor.specialty}</p>
+      <p>Based on your responses, we think ${matchedMentor.name} would be an excellent mentor for you!</p>
+    `;
   }
 
-  startQuiz();
+  fetchData();
 });

@@ -5,64 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const roomsContainer = document.getElementById("rooms-container");
   const roomSearch = document.getElementById("room-search");
 
-  let studyRooms = [
-    {
-      id: 1,
-      name: "AI Study Group",
-      topic: "Machine Learning",
-      capacity: 5,
-      participants: 3,
-    },
-    {
-      id: 2,
-      name: "Web Dev Workshop",
-      topic: "React Hooks",
-      capacity: 8,
-      participants: 6,
-    },
-    {
-      id: 3,
-      name: "Data Science Club",
-      topic: "Data Visualization",
-      capacity: 6,
-      participants: 2,
-    },
-    {
-      id: 4,
-      name: "Cybersecurity Forum",
-      topic: "Ethical Hacking",
-      capacity: 4,
-      participants: 4,
-    },
-    {
-      id: 5,
-      name: "Cloud Computing",
-      topic: "AWS Fundamentals",
-      capacity: 7,
-      participants: 5,
-    },
-    {
-      id: 6,
-      name: "Blockchain Meet-up",
-      topic: "Smart Contracts",
-      capacity: 10,
-      participants: 8,
-    },
-    {
-      id: 7,
-      name: "Game Dev Guild",
-      topic: "Unity 3D",
-      capacity: 9,
-      participants: 7,
-    },
-    {
-      id: 8,
-      name: "AI Ethics Roundtable",
-      topic: "AI Regulations",
-      capacity: 6,
-      participants: 4,
-    },
-  ];
+  let studyRooms = [];
 
   function displayRooms(rooms) {
     roomsContainer.innerHTML = "";
@@ -70,18 +13,26 @@ document.addEventListener("DOMContentLoaded", () => {
       const roomCard = document.createElement("div");
       roomCard.classList.add("room-card");
       roomCard.innerHTML = `
-                <h3>${room.name}</h3>
-                <p>Topic: ${room.topic}</p>
-                <p>Participants: ${room.participants}/${room.capacity}</p>
-                <button class="join-btn" ${
-                  room.participants >= room.capacity ? "disabled" : ""
-                }>
-                    ${room.participants >= room.capacity ? "Full" : "Join Room"}
-                </button>
-            `;
+        <h3>${room.name}</h3>
+        <p>Topic: ${room.topic}</p>
+        <p>Participants: ${room.participants}/${room.capacity}</p>
+        <button class="join-btn" ${
+          room.participants >= room.capacity ? "disabled" : ""
+        }>
+          ${room.participants >= room.capacity ? "Full" : "Join Room"}
+        </button>
+      `;
       roomsContainer.appendChild(roomCard);
     });
   }
+
+  fetch("../data/study-rooms.json")
+    .then((response) => response.json())
+    .then((data) => {
+      studyRooms = data;
+      displayRooms(studyRooms);
+    })
+    .catch((error) => console.error("Error loading rooms data:", error));
 
   createRoomBtn.addEventListener("click", () => {
     createRoomModal.style.display = "block";
@@ -96,8 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
       capacity: parseInt(document.getElementById("room-capacity").value),
       participants: 0,
     };
-    studyRooms.push(newRoom);
+
+    studyRooms.unshift(newRoom);
+
     displayRooms(studyRooms);
+
     createRoomModal.style.display = "none";
     createRoomForm.reset();
   });
@@ -117,6 +71,4 @@ document.addEventListener("DOMContentLoaded", () => {
       createRoomModal.style.display = "none";
     }
   });
-
-  displayRooms(studyRooms);
 });

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Priya Sharma",
+    "course": "Computer Science, 3rd Year",
+    "content": "The mentorship program has been invaluable for my academic growth. Highly recommended!",
+    "image": "images/female.png",
+    "alt": "Student 1"
+  },
+  {
+    "name": "Rahul Verma",
+    "course": "Information Technology, 4th Year",
+    "content": "I received excellent career guidance that helped me secure my dream internship.",
+    "image": "images/male.jpg",
+    "alt": "Student 2"
+  },
+  {
+    "name": "Neha Patel",
+    "course": "Electronics and Communication, 2nd Year",
+    "content": "The workshops and hands-on sessions were extremely helpful in building my technical skills.",
+    "image": "images/female.png",
+    "alt": "Student 3"
+  }
+]

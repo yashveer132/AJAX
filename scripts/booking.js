@@ -7,13 +7,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModal = document.getElementById("close-modal");
   const confirmationDetails = document.getElementById("confirmation-details");
   const mentorSelect = document.getElementById("mentor");
+
   let selectedMentor = "";
   let selectedDate = "";
-
   const bookedSlotsData = {};
 
   const today = new Date().toISOString().split("T")[0];
   dateInput.setAttribute("min", today);
+
+  fetch("../data/mentors-session.json")
+    .then((response) => response.json())
+    .then((mentors) => populateMentorDropdown(mentors))
+    .catch((error) => console.error("Error loading mentor data:", error));
+
+  const populateMentorDropdown = (mentors) => {
+    mentorSelect.innerHTML = '<option value="">Choose a mentor</option>';
+    mentors.forEach((mentor) => {
+      const option = document.createElement("option");
+      option.value = mentor.id;
+      option.textContent = `${mentor.name} (${mentor.specialty})`;
+      mentorSelect.appendChild(option);
+    });
+  };
 
   const generateTimeSlots = () => {
     if (!selectedMentor || !selectedDate) {
@@ -26,23 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!bookedSlotsData[selectedMentor]) {
       bookedSlotsData[selectedMentor] = {};
     }
+
     if (!bookedSlotsData[selectedMentor][selectedDate]) {
-      const numberOfBookedSlots = Math.floor(Math.random() * 3) + 2;
-      const allSlots = [];
-      for (let i = 9; i <= 17; i++) {
-        allSlots.push(`${i.toString().padStart(2, "0")}:00`);
-      }
-
-      const bookedSlotsForMentor = [];
-
-      while (bookedSlotsForMentor.length < numberOfBookedSlots) {
-        const randomIndex = Math.floor(Math.random() * allSlots.length);
-        const slot = allSlots[randomIndex];
-        if (!bookedSlotsForMentor.includes(slot)) {
-          bookedSlotsForMentor.push(slot);
-        }
-      }
-
+      const bookedSlotsForMentor = generateRandomBookedSlots();
       bookedSlotsData[selectedMentor][selectedDate] = bookedSlotsForMentor;
     }
 
@@ -55,30 +56,41 @@ document.addEventListener("DOMContentLoaded", () => {
       const button = document.createElement("button");
       button.type = "button";
       button.classList.add("time-slot");
-      button.textContent = time;
+      button.textContent = isBooked ? `${time} (Booked)` : time;
       button.disabled = isBooked;
 
       if (isBooked) {
         button.classList.add("booked");
-        button.textContent = `${time} (Booked)`;
-      }
-
-      if (!isBooked) {
-        button.addEventListener("click", () => {
-          const previouslySelected =
-            timeSlotsContainer.querySelector(".selected");
-          if (previouslySelected) {
-            previouslySelected.classList.remove("selected");
-          }
-
-          button.classList.add("selected");
-
-          hiddenTimeInput.value = time;
-        });
+      } else {
+        button.addEventListener("click", () => selectTimeSlot(button, time));
       }
 
       timeSlotsContainer.appendChild(button);
     }
+  };
+
+  const generateRandomBookedSlots = () => {
+    const bookedSlots = [];
+    const allSlots = Array.from({ length: 9 }, (_, i) => `${i + 9}:00`);
+
+    while (bookedSlots.length < Math.floor(Math.random() * 3) + 2) {
+      const randomSlot = allSlots[Math.floor(Math.random() * allSlots.length)];
+      if (!bookedSlots.includes(randomSlot)) {
+        bookedSlots.push(randomSlot);
+      }
+    }
+
+    return bookedSlots;
+  };
+
+  const selectTimeSlot = (button, time) => {
+    const previouslySelected = timeSlotsContainer.querySelector(".selected");
+    if (previouslySelected) {
+      previouslySelected.classList.remove("selected");
+    }
+
+    button.classList.add("selected");
+    hiddenTimeInput.value = time;
   };
 
   mentorSelect.addEventListener("change", (e) => {
@@ -113,19 +125,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!bookedSlotsData[bookingDetails.mentor]) {
       bookedSlotsData[bookingDetails.mentor] = {};
     }
+
     if (!bookedSlotsData[bookingDetails.mentor][bookingDetails.date]) {
       bookedSlotsData[bookingDetails.mentor][bookingDetails.date] = [];
     }
+
     bookedSlotsData[bookingDetails.mentor][bookingDetails.date].push(
       bookingDetails.time
     );
 
     confirmationDetails.innerHTML = `
-            <p><strong>Mentor:</strong> ${bookingDetails.mentor}</p>
-            <p><strong>Date:</strong> ${bookingDetails.date}</p>
-            <p><strong>Time:</strong> ${bookingDetails.time}</p>
-            <p><strong>Topic:</strong> ${bookingDetails.topic}</p>
-        `;
+      <p><strong>Mentor:</strong> ${mentorSelect.selectedOptions[0].text}</p>
+      <p><strong>Date:</strong> ${bookingDetails.date}</p>
+      <p><strong>Time:</strong> ${bookingDetails.time}</p>
+      <p><strong>Topic:</strong> ${bookingDetails.topic}</p>
+    `;
     modal.style.display = "block";
 
     form.reset();

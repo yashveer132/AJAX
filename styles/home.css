@@ -169,13 +169,13 @@
 }
 
 .cta-section .cta-button {
-  background-color: white;
+  background-color: purple;
   color: var(--primary-color);
 }
 
-.cta-section .cta-button:hover {
-  background-color: var(--secondary-color);
-  color: white;
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 992px) {
