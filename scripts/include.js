@@ -7,8 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((data) => {
         document.getElementById(placeholderId).innerHTML = data;
+
         if (placeholderId === "header-placeholder") {
+          setupHeader();
           setupActiveNavLink();
+        }
+
+        if (placeholderId === "footer-placeholder") {
         }
       })
       .catch((error) => console.error(error));
@@ -16,6 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadComponent("../pages/header.html", "header-placeholder");
   loadComponent("../pages/footer.html", "footer-placeholder");
+
+  function setupHeader() {
+    const menuToggle = document.getElementById("mobile-menu");
+    const nav = document.querySelector("nav ul");
+
+    if (menuToggle && nav) {
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("show-menu");
+        menuToggle.classList.toggle("active");
+      });
+    }
+  }
 
   function setupActiveNavLink() {
     const navLinks = document.querySelectorAll("nav ul li a");
@@ -25,9 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     navLinks.forEach((link) => {
-      link.addEventListener("click", (event) => {
+      link.addEventListener("click", function (event) {
         clearActiveLinks();
-        event.target.classList.add("active");
+        this.classList.add("active");
       });
 
       const currentPage = window.location.pathname.split("/").pop();

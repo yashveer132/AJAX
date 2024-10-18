@@ -31,26 +31,29 @@ nav {
 .logo span {
   font-size: 1.8em;
   font-weight: bold;
+  color: var(--primary-color);
 }
 
-nav ul {
+.nav {
   display: flex;
   list-style: none;
   z-index: 1000;
 }
 
-nav ul li {
+.nav li {
   margin-left: 20px;
 }
 
-nav ul li a {
+.nav li a {
   color: var(--text-color);
   font-weight: 500;
   transition: color 0.3s ease;
+  font-size: 1.1em;
+  text-decoration: none;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
+.nav li a:hover,
+.nav li a.active {
   color: var(--primary-color);
 }
 
@@ -69,36 +72,9 @@ nav ul li a.active {
   transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   nav {
     padding: 10px 15px;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  nav ul {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    width: 100%;
-    height: calc(100% - 70px);
-    background-color: white;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 30px;
-    transition: right 0.3s ease;
-    z-index: 1000;
-  }
-
-  nav ul.show-menu {
-    right: 0;
-  }
-
-  nav ul li {
-    margin: 15px 0;
   }
 
   .logo-image {
@@ -107,6 +83,93 @@ nav ul li a.active {
   }
 
   .logo span {
-    font-size: 1.5em;
+    font-size: 1.6em;
+  }
+
+  .nav li {
+    margin-left: 15px;
+  }
+
+  .nav li a {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 80px;
+    padding-left: 30px;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav.show-menu {
+    left: 0;
+  }
+
+  .nav li {
+    margin: 20px 0;
+  }
+
+  .nav li a {
+    font-size: 1.2em;
+  }
+
+  .logo-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logo span {
+    font-size: 1.4em;
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo span {
+    font-size: 1.2em;
+  }
+
+  .nav li a {
+    font-size: 1.1em;
+  }
+
+  .menu-toggle .bar {
+    width: 20px;
+    height: 2px;
+  }
+
+  .nav {
+    width: 80%;
+    padding-left: 20px;
   }
 }
