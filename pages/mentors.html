@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Mentors - SLIET Mentorship Platform</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/mentors.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="../images/logo.jpg"
+            alt="SLIET Mentorship Logo"
+            class="logo-image"
+          />
+          SLIET Mentorship
+        </div>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="mentors.html" class="active">Mentors</a></li>
+          <li><a href="booking.html">Book a Session</a></li>
+          <li><a href="chat.html">Chat</a></li>
+          <li><a href="study-rooms.html">Study Rooms</a></li>
+          <li><a href="mentor-match.html">Mentor Match</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 class="animate-text">Our Expert Mentors</h1>
+        <p class="animate-text">
+          Connect with experienced faculty members who are passionate about
+          guiding your academic and professional journey.
+        </p>
+      </section>
+
+      <section class="mentor-filters">
+        <h2>Find Your Perfect Mentor</h2>
+        <div class="filter-container">
+          <select id="specialization-filter" class="filter-select">
+            <option value="">All Specializations</option>
+            <option value="artificial intelligence">
+              Artificial Intelligence
+            </option>
+            <option value="web development">Web Development</option>
+            <option value="data science">Data Science</option>
+            <option value="cybersecurity">Cybersecurity</option>
+          </select>
+          <select id="experience-filter" class="filter-select">
+            <option value="">All Experience Levels</option>
+            <option value="0-5">0-5 years</option>
+            <option value="5-10">5-10 years</option>
+            <option value="10+">10+ years</option>
+          </select>
+          <button id="apply-filters" class="filter-button">
+            Apply Filters
+          </button>
+        </div>
+      </section>
+
+      <section class="mentors-grid">
+        <div class="mentor-card animate-card">
+          <img
+            src="../images/male.jpg"
+            alt="Dr. Anita Sharma"
+            class="mentor-image"
+          />
+          <div class="mentor-info">
+            <h3>Dr. Anita Sharma</h3>
+            <p class="specialization">Artificial Intelligence</p>
+            <p class="experience">Experience: 8 years</p>
+            <p class="bio">
+              Expert in machine learning and neural networks. Passionate about
+              AI ethics and responsible AI development.
+            </p>
+          </div>
+          <a href="booking.html" class="book-session-btn">Book a Session</a>
+        </div>
+
+        <div class="mentor-card animate-card">
+          <img
+            src="../images/male.jpg"
+            alt="Prof. Rajesh Kumar"
+            class="mentor-image"
+          />
+          <div class="mentor-info">
+            <h3>Prof. Rajesh Kumar</h3>
+            <p class="specialization">Web Development</p>
+            <p class="experience">Experience: 12 years</p>
+            <p class="bio">
+              Full-stack developer with expertise in modern web technologies and
+              frameworks.
+            </p>
+          </div>
+          <a href="booking.html" class="book-session-btn">Book a Session</a>
+        </div>
+      </section>
+
+      <section class="mentor-spotlight">
+        <h2>Mentor Spotlight</h2>
+        <div class="spotlight-container">
+          <img
+            src="../images/male.jpg"
+            alt="Dr. Sanjay Gupta"
+            class="spotlight-image animate-image"
+          />
+          <div class="spotlight-content">
+            <h3>Dr. Sanjay Gupta</h3>
+            <p class="specialization">Artificial Intelligence & Robotics</p>
+            <p class="experience">Experience: 20+ years</p>
+            <p class="bio">
+              Dr. Gupta is a renowned expert in AI and Robotics, with numerous
+              publications and patents to his name. He has been instrumental in
+              shaping the AI curriculum at SLIET and has mentored several
+              successful startups in the field.
+            </p>
+            <a href="booking.html" class="cta-button animate-button"
+              >Book a Special Session</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <h2>What Students Say About Our Mentors</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial animate-testimonial">
+            <p>
+              "Dr. Sharma's guidance in AI has been invaluable. Her insights
+              have helped me secure an internship at a leading AI research lab."
+            </p>
+            <p class="student-name">- Arjun Mehta, 4th Year</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="mentors.html">Mentors</a></li>
+            <li><a href="booking.html">Book a Session</a></li>
+            <li><a href="chat.html">Chat</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: mentorship@sliet.ac.in</p>
+          <p>Phone: +91 1234567890</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <img src="../images/facebook.png" alt="Facebook" />
+            </a>
+            <a href="#" class="social-icon">
+              <img src="../images/twitter.png" alt="Twitter" />
+            </a>
+            <a href="#" class="social-icon">
+              <img src="../images/linkedin.png" alt="LinkedIn" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">
+        &copy; 2023 SLIET Mentorship Platform. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="../scripts/mentors.js"></script>
+  </body>
+</html>

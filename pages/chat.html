@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat - SLIET Mentorship Platform</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/chat.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="../images/logo.jpg"
+            alt="SLIET Mentorship Logo"
+            class="logo-image"
+          />
+          SLIET Mentorship
+        </div>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="mentors.html">Mentors</a></li>
+          <li><a href="booking.html">Book a Session</a></li>
+          <li><a href="chat.html" class="active">Chat</a></li>
+          <li><a href="study-rooms.html">Study Rooms</a></li>
+          <li><a href="mentor-match.html">Mentor Match</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 class="animate-text">Chat with Your Mentor</h1>
+        <p class="animate-text">
+          Connect with your mentor for quick questions, follow-ups, and ongoing
+          support.
+        </p>
+      </section>
+
+      <section class="chat-container">
+        <div class="chat-sidebar">
+          <h2>Your Mentors</h2>
+          <ul id="mentor-list">
+            <li class="mentor-item active" data-mentor="anita-sharma">
+              <img
+                src="../images/female.png"
+                alt="Dr. Anita Sharma"
+                class="mentor-avatar"
+              />
+              <div class="mentor-info">
+                <h3>Dr. Anita Sharma</h3>
+                <p>AI Specialist</p>
+              </div>
+            </li>
+            <li class="mentor-item" data-mentor="rajesh-kumar">
+              <img
+                src="../images/male.jpg"
+                alt="Prof. Rajesh Kumar"
+                class="mentor-avatar"
+              />
+              <div class="mentor-info">
+                <h3>Prof. Rajesh Kumar</h3>
+                <p>Web Development</p>
+              </div>
+            </li>
+            <li class="mentor-item" data-mentor="priya-patel">
+              <img
+                src="../images/female.png"
+                alt="Dr. Priya Patel"
+                class="mentor-avatar"
+              />
+              <div class="mentor-info">
+                <h3>Dr. Priya Patel</h3>
+                <p>Data Science</p>
+              </div>
+            </li>
+            <li class="mentor-item" data-mentor="sunil-mathur">
+              <img
+                src="../images/male.jpg"
+                alt="Dr. Sunil Mathur"
+                class="mentor-avatar"
+              />
+              <div class="mentor-info">
+                <h3>Dr. Sunil Mathur</h3>
+                <p>Cybersecurity</p>
+              </div>
+            </li>
+            <li class="mentor-item" data-mentor="meena-verma">
+              <img
+                src="../images/female.png"
+                alt="Meena Verma"
+                class="mentor-avatar"
+              />
+              <div class="mentor-info">
+                <h3>Meena Verma</h3>
+                <p>Cloud Computing</p>
+              </div>
+            </li>
+            <li class="mentor-item" data-mentor="amit-singh">
+              <img
+                src="../images/male.jpg"
+                alt="Amit Singh"
+                class="mentor-avatar"
+              />
+              <div class="mentor-info">
+                <h3>Amit Singh</h3>
+                <p>Blockchain Technology</p>
+              </div>
+            </li>
+            <li class="mentor-item" data-mentor="sneha-das">
+              <img
+                src="../images/female.png"
+                alt="Sneha Das"
+                class="mentor-avatar"
+              />
+              <div class="mentor-info">
+                <h3>Sneha Das</h3>
+                <p>Game Development</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="chat-main">
+          <div id="chat-messages" class="chat-messages"></div>
+          <form id="chat-form" class="chat-input">
+            <input
+              type="text"
+              id="message-input"
+              placeholder="Type your message..."
+              required
+            />
+            <button type="submit">
+              <img src="../images/send.png" alt="Send" />
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="chat-tips">
+        <h2>Tips for Effective Communication</h2>
+        <ul class="tips-list">
+          <li class="animate-tip">Be clear and concise in your messages</li>
+          <li class="animate-tip">
+            Ask specific questions to get targeted advice
+          </li>
+          <li class="animate-tip">Respect your mentor's time and expertise</li>
+          <li class="animate-tip">
+            Follow up on advice and share your progress
+          </li>
+          <li class="animate-tip">
+            Use proper etiquette and maintain a professional tone
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="mentors.html">Mentors</a></li>
+            <li><a href="booking.html">Book a Session</a></li>
+            <li><a href="chat.html">Chat</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: mentorship@sliet.ac.in</p>
+          <p>Phone: +91 1234567890</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <img src="../images/facebook.png" alt="Facebook" />
+            </a>
+            <a href="#" class="social-icon">
+              <img src="../images/twitter.png" alt="Twitter" />
+            </a>
+            <a href="#" class="social-icon">
+              <img src="../images/linkedin.png" alt="LinkedIn" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">
+        &copy; 2023 SLIET Mentorship Platform. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="../scripts/chat.js"></script>
+  </body>
+</html>

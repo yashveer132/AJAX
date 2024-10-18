@@ -1,0 +1,272 @@
+.hero {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  margin-top: 80px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking-process {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+}
+
+.booking-process h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 40px;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step {
+  flex-basis: calc(33.333% - 40px);
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 20px;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.step-number {
+  background-color: var(--primary-color);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  font-weight: bold;
+}
+
+.step h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.booking-form {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking-form h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time-slot {
+  padding: 10px 15px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: white;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.time-slot:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.time-slot.selected {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: white;
+}
+
+.time-slot.booked {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: white;
+  cursor: not-allowed;
+}
+
+.time-slot.booked:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.booking-tips {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.booking-tips h2 {
+  color: var(--primary-color);
+  margin-bottom: 40px;
+}
+
+.tips-list {
+  max-width: 800px;
+  margin: 0 auto;
+  list-style-type: none;
+  padding: 0;
+  display: inline-block;
+  text-align: left;
+}
+
+.tips-list li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.tips-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-step {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-form {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-tip {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-text {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+@media (max-width: 768px) {
+  .step {
+    flex-basis: calc(50% - 40px);
+  }
+
+  .time-slots {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .step {
+    flex-basis: 100%;
+  }
+}
