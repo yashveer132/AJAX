@@ -2,7 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--primary-color)
+  );
   background-size: 200% 200%;
   animation: gradientBackground 10s ease infinite;
   color: white;
@@ -24,6 +29,28 @@
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 30px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.cta-button {
+  background-color: purple;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--secondary-color);
 }
 
 .hero-image {
@@ -93,17 +120,6 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.feature-icon {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 20px;
-}
-
-.feature h2 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-}
-
 .testimonials {
   text-align: center;
   padding: 50px 20px;
@@ -171,11 +187,6 @@
   color: var(--primary-color);
 }
 
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
 @media (max-width: 992px) {
   .hero {
     flex-direction: column;
@@ -193,6 +204,15 @@
 
   .hero p {
     font-size: 1.1rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cta-button {
+    width: 100%;
   }
 }
 

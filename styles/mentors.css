@@ -49,17 +49,6 @@
   font-size: 1rem;
 }
 
-.filter-button {
-  padding: 10px 20px;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
 .mentors-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -96,7 +85,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
@@ -115,11 +103,6 @@
   color: var(--secondary-color);
 }
 
-.experience {
-  font-style: italic;
-  color: #666;
-}
-
 .bio {
   font-size: 0.9rem;
   line-height: 1.4;
@@ -134,6 +117,10 @@
   text-decoration: none;
   transition: background-color 0.3s ease;
   margin-top: auto;
+}
+
+.book-session-btn:hover {
+  background-color: var(--secondary-color);
 }
 
 .mentor-spotlight {
@@ -184,6 +171,10 @@
   margin-top: 20px;
 }
 
+.cta-button:hover {
+  background-color: var(--secondary-color);
+}
+
 .testimonials {
   padding: 80px 20px;
   background-color: white;
@@ -221,6 +212,29 @@
 .student-name {
   font-weight: bold;
   color: var(--primary-color);
+}
+
+.mentor-time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.mentor-time-slots .time-slot {
+  padding: 5px 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 3px;
+  background-color: white;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+}
+
+.mentor-time-slots .time-slot.booked {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: white;
 }
 
 @keyframes fadeInUp {
@@ -290,9 +304,13 @@
     flex-direction: column;
   }
 
-  .filter-select,
-  .filter-button {
+  .filter-select {
     width: 100%;
     margin-bottom: 10px;
+  }
+
+  .mentor-time-slots .time-slot {
+    padding: 4px 8px;
+    font-size: 0.7rem;
   }
 }

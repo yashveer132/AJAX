@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "studentName": "Alice Johnson",
+    "date": "2024-10-25",
+    "time": "10:00 AM",
+    "topic": "System Analysis Guidance",
+    "status": "upcoming",
+    "meetingLink": "#"
+  },
+  {
+    "id": 2,
+    "studentName": "Bob Smith",
+    "date": "2024-10-28",
+    "time": "2:00 PM",
+    "topic": "Machine Learning Basics",
+    "status": "upcoming",
+    "meetingLink": "#"
+  },
+  {
+    "id": 3,
+    "studentName": "Carol Williams",
+    "date": "2024-11-01",
+    "time": "11:00 AM",
+    "topic": "IoT Applications",
+    "status": "upcoming",
+    "meetingLink": "#"
+  },
+  {
+    "id": 4,
+    "studentName": "David Brown",
+    "date": "2024-10-20",
+    "time": "9:00 AM",
+    "topic": "Neural Networks Basics",
+    "status": "past",
+    "meetingLink": "#"
+  },
+  {
+    "id": 5,
+    "studentName": "Eva Davis",
+    "date": "2024-10-18",
+    "time": "3:00 PM",
+    "topic": "Cloud Computing",
+    "status": "past",
+    "meetingLink": "#"
+  },
+  {
+    "id": 6,
+    "studentName": "Frank Miller",
+    "date": "2024-10-15",
+    "time": "1:00 PM",
+    "topic": "Introduction to Robotics",
+    "status": "past",
+    "meetingLink": "#"
+  }
+]

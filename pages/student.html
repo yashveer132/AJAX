@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Dashboard - SLIET Mentorship Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/student.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main>
+      <section class="dashboard-hero">
+        <h1>Welcome</h1>
+        <p>
+          Here's your personalized dashboard for managing your mentorship
+          sessions.
+        </p>
+      </section>
+
+      <section class="upcoming-sessions">
+        <h2>Upcoming Sessions</h2>
+        <div class="sessions-container" id="upcoming-sessions-container"></div>
+      </section>
+
+      <section class="past-sessions">
+        <h2>Past Sessions</h2>
+        <div class="sessions-container" id="past-sessions-container"></div>
+      </section>
+
+      <section class="book-new-session">
+        <h2>Book a New Session</h2>
+        <p>Need more guidance? Book a new session with our mentors.</p>
+        <a href="/pages/booking.html" class="cta-button">Book a Session</a>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../scripts/include.js"></script>
+    <script type="module" src="../scripts/student.js"></script>
+  </body>
+</html>
