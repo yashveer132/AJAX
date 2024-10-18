@@ -2,36 +2,35 @@
   {
     "question": "What is your primary area of interest?",
     "answers": [
-      "Artificial Intelligence",
+      "System Analysis and Design",
+      "Machine Learning",
+      "IOT and Machine Learning",
+      "Artificial Neural Networks",
+      "Cloud Computing",
+      "Robotics",
+      "AI Specialist"
+    ]
+  },
+  {
+    "question": "Which skill would you like to improve?",
+    "answers": [
+      "Image Processing",
+      "Natural Language Processing",
+      "Computer Systems Theory",
+      "IoT Development",
+      "Cybersecurity",
       "Web Development",
-      "Data Science",
-      "Cybersecurity"
+      "Data Science"
     ]
   },
   {
-    "question": "What is your current academic year?",
-    "answers": ["1st Year", "2nd Year", "3rd Year", "4th Year"]
-  },
-  {
-    "question": "What type of guidance are you looking for?",
+    "question": "What kind of mentorship are you looking for?",
     "answers": [
-      "Career Advice",
-      "Technical Skills",
-      "Research Opportunities",
-      "Industry Connections"
+      "Project guidance",
+      "Research mentorship",
+      "Hands-on technical workshops",
+      "Career advice and job preparation",
+      "Help with certifications or exams"
     ]
-  },
-  {
-    "question": "What is your preferred mentorship style?",
-    "answers": [
-      "Hands-on Practical",
-      "Theoretical Discussion",
-      "Project-based",
-      "Career-oriented"
-    ]
-  },
-  {
-    "question": "How often would you like to meet with your mentor?",
-    "answers": ["Weekly", "Bi-weekly", "Monthly", "As needed"]
   }
 ]

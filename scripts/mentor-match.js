@@ -82,13 +82,18 @@ document.addEventListener("DOMContentLoaded", () => {
     nextButton.style.display = "none";
     resultContainer.style.display = "block";
 
-    const matchedMentor = mentors[Math.floor(Math.random() * mentors.length)];
+    const matchedMentor =
+      mentors.find((mentor) =>
+        mentor.specialty.some((specialty) => userResponses.includes(specialty))
+      ) || mentors[Math.floor(Math.random() * mentors.length)];
 
     mentorMatchResult.innerHTML = `
       <img src="${matchedMentor.image}" alt="${matchedMentor.name}">
       <h3>${matchedMentor.name}</h3>
-      <p>Specialty: ${matchedMentor.specialty}</p>
-      <p>Based on your responses, we think ${matchedMentor.name} would be an excellent mentor for you!</p>
+      <p>Specialty: ${matchedMentor.specialty.join(", ")}</p>
+      <p>Based on your responses, we think ${
+        matchedMentor.name
+      } would be an excellent mentor for you!</p>
     `;
   }
 

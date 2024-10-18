@@ -1,22 +1,62 @@
 [
   {
-    "name": "Dr. Anita Sharma",
-    "specialty": "Artificial Intelligence",
-    "image": "../images/female.png"
+    "id": "birmohan-singh",
+    "name": "Dr. Birmohan Singh",
+    "specialty": ["System Analysis and Design"],
+    "image": "../images/mentor1.jpg"
   },
   {
-    "name": "Prof. Rajesh Kumar",
-    "specialty": "Web Development",
-    "image": "../images/male.jpg"
+    "id": "damanpreet-singh",
+    "name": "Dr. Damanpreet Singh",
+    "specialty": ["Machine Learning", "Artificial Neural Networks"],
+    "image": "../images/mentor2.jpg"
   },
   {
-    "name": "Dr. Priya Patel",
-    "specialty": "Data Science",
-    "image": "../images/female.png"
+    "id": "major-singh-goraya",
+    "name": "Dr. Major Singh Goraya",
+    "specialty": ["IOT and Machine Learning"],
+    "image": "../images/mentor3.jpg"
   },
   {
-    "name": "Prof. Amit Singh",
-    "specialty": "Cybersecurity",
-    "image": "../images/male.jpg"
+    "id": "manoj-sachan",
+    "name": "Dr. Manoj Sachan",
+    "specialty": ["Artificial Neural Networks", "Deep Learning"],
+    "image": "../images/mentor4.jpg"
+  },
+  {
+    "id": "gurjinder-kaur",
+    "name": "Dr. Gurjinder Kaur",
+    "specialty": ["Cloud Computing", "IoT Development"],
+    "image": "../images/mentor5.jpg"
+  },
+  {
+    "id": "amar-nath",
+    "name": "Dr. Amar Nath",
+    "specialty": ["Robotics", "AI Specialist"],
+    "image": "../images/mentor6.jpg"
+  },
+  {
+    "id": "jagdeep-singh",
+    "name": "Dr. Jagdeep Singh",
+    "specialty": ["AI Specialist", "Machine Learning"],
+    "image": "../images/mentor7.jpg"
+  },
+  {
+    "id": "vinod-kumar-verma",
+    "name": "Dr. VINOD KUMAR VERMA",
+    "specialty": ["Internet of Things"],
+    "image": "../images/mentor12.jpg"
+  },
+  {
+    "id": "preetpal-kaur-buttar",
+    "name": "Dr. Preetpal Kaur Buttar",
+    "specialty": ["Natural Language Processing"],
+    "image": "../images/mentor9.jpg"
+  },
+  {
+    "id": "rahul-gautam",
+    "name": "Rahul Gautam",
+    "specialty": ["Image Processing"],
+    "image": "../images/mentor14.jpg"
   }
 ]

@@ -2,58 +2,100 @@
   {
     "id": "birmohan-singh",
     "name": "Dr. Birmohan Singh",
-    "specialization": "System Analysis and Design",
+    "specialization": ["System Analysis and Design", "Computer Systems Theory"],
     "image": "../images/mentor1.jpg",
     "bio": "Expert in system analysis, with extensive experience in guiding IT projects.",
-     "spotlight": "yes"
+    "spotlight": "yes"
   },
   {
     "id": "damanpreet-singh",
     "name": "Dr. Damanpreet Singh",
-    "specialization": "Machine Learning",
+    "specialization": ["Machine Learning", "Deep Learning"],
     "image": "../images/mentor2.jpg",
-    
     "bio": "Specializes in machine learning algorithms and their real-world applications."
   },
   {
     "id": "major-singh-goraya",
     "name": "Dr. Major Singh Goraya",
-    "specialization": "IOT and Machine Learning",
+    "specialization": ["IOT and Machine Learning", "Internet of Things"],
     "image": "../images/mentor3.jpg",
-    
     "bio": "Combines expertise in IoT and machine learning to design innovative solutions."
   },
   {
     "id": "manoj-sachan",
     "name": "Dr. Manoj Sachan",
-    "specialization": "Artificial Neural Networks",
+    "specialization": ["Artificial Neural Networks", "Deep Learning"],
     "image": "../images/mentor4.jpg",
-    
     "bio": "Has extensive research experience in neural networks and deep learning."
   },
   {
     "id": "gurjinder-kaur",
     "name": "Dr. Gurjinder Kaur",
-    "specialization": "Cloud Computing",
+    "specialization": ["Cloud Computing", "Virtualization Technologies"],
     "image": "../images/mentor5.jpg",
-    
     "bio": "Focuses on cloud computing technologies and solutions for modern businesses."
   },
   {
     "id": "amar-nath",
     "name": "Dr. Amar Nath",
-    "specialization": "Robotics",
+    "specialization": ["Robotics", "Automation"],
     "image": "../images/mentor6.jpg",
-    
     "bio": "Researcher in the field of robotics, with practical experience in automation."
   },
   {
     "id": "jagdeep-singh",
     "name": "Dr. Jagdeep Singh",
-    "specialization": "AI Specialist",
+    "specialization": ["AI Specialist", "Artificial Neural Networks"],
     "image": "../images/mentor7.jpg",
-    
     "bio": "AI specialist passionate about advancing artificial intelligence research."
-   
+  },
+  {
+    "id": "manminder-singh",
+    "name": "Dr. Manminder Singh",
+    "specialization": ["Digital Image Processing", "Image Processing"],
+    "image": "../images/mentor8.jpg",
+    "bio": "Expert in digital image processing, focusing on image enhancement and restoration."
+  },
+  {
+    "id": "preetpal-kaur-buttar",
+    "name": "Dr. Preetpal Kaur Buttar",
+    "specialization": ["Natural Language Processing", "AI Specialist"],
+    "image": "../images/mentor9.jpg",
+    "bio": "Specializes in natural language processing and machine translation systems."
+  },
+  {
+    "id": "tajinder-singh",
+    "name": "Dr. Tajinder Singh",
+    "specialization": ["Deep Learning", "Machine Learning"],
+    "image": "../images/mentor10.jpg",
+    "bio": "Researcher in deep learning architectures, with a focus on neural networks."
+  },
+  {
+    "id": "utkarsh",
+    "name": "Dr. Utkarsh",
+    "specialization": ["Computer Systems Theory", "System Analysis and Design"],
+    "image": "../images/mentor11.jpg",
+    "bio": "Specializes in theoretical aspects of computer systems and automata theory."
+  },
+  {
+    "id": "vinod-kumar-verma",
+    "name": "Dr. VINOD KUMAR VERMA",
+    "specialization": ["Internet of Things", "IOT and Machine Learning"],
+    "image": "../images/mentor12.jpg",
+    "bio": "Expert in IoT solutions, focusing on smart devices and connected systems."
+  },
+  {
+    "id": "jaspal-singh",
+    "name": "Jaspal Singh",
+    "specialization": ["Cloud Computing", "Virtualization Technologies"],
+    "image": "../images/mentor13.jpg",
+    "bio": "Specializes in cloud computing infrastructure and virtualization technologies."
+  },
+  {
+    "id": "rahul-gautam",
+    "name": "Rahul Gautam",
+    "specialization": ["Image Processing", "Digital Image Processing"],
+    "image": "../images/mentor14.jpg",
+    "bio": "Focuses on image processing techniques for medical and industrial applications."
   }
 ]

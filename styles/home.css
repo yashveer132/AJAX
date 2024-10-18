@@ -2,11 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+  background-size: 200% 200%;
+  animation: gradientBackground 10s ease infinite;
   color: white;
   padding: 100px 20px;
   margin-top: 80px;

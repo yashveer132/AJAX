@@ -23,14 +23,20 @@ nav {
 }
 
 .logo-image {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   margin-right: 10px;
+}
+
+.logo span {
+  font-size: 1.8em;
+  font-weight: bold;
 }
 
 nav ul {
   display: flex;
   list-style: none;
+  z-index: 1000;
 }
 
 nav ul li {
@@ -52,6 +58,7 @@ nav ul li a.active {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  z-index: 1001;
 }
 
 .menu-toggle .bar {
@@ -63,6 +70,10 @@ nav ul li a.active {
 }
 
 @media (max-width: 768px) {
+  nav {
+    padding: 10px 15px;
+  }
+
   .menu-toggle {
     display: flex;
   }
@@ -71,7 +82,7 @@ nav ul li a.active {
     position: fixed;
     top: 70px;
     right: -100%;
-    width: 200px;
+    width: 100%;
     height: calc(100% - 70px);
     background-color: white;
     flex-direction: column;
@@ -79,6 +90,7 @@ nav ul li a.active {
     justify-content: flex-start;
     padding-top: 30px;
     transition: right 0.3s ease;
+    z-index: 1000;
   }
 
   nav ul.show-menu {
@@ -87,5 +99,14 @@ nav ul li a.active {
 
   nav ul li {
     margin: 15px 0;
+  }
+
+  .logo-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo span {
+    font-size: 1.5em;
   }
 }

@@ -2,8 +2,11 @@
   background: linear-gradient(
     135deg,
     var(--primary-color),
-    var(--secondary-color)
+    var(--secondary-color),
+    var(--primary-color)
   );
+  background-size: 200% 200%;
+  animation: gradientBackground 10s ease infinite;
   color: white;
   text-align: center;
   padding: 100px 20px;
@@ -48,9 +51,7 @@
 .room-list h2 {
   color: var(--primary-color);
   margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .rooms-container {
@@ -64,14 +65,21 @@
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.room-card.show {
+  animation: fadeInUp 0.5s forwards;
 }
 
 .room-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .room-card h3 {
@@ -92,11 +100,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .room-card .join-btn:hover {
   background-color: var(--primary-color);
+  transform: scale(1.05);
 }
 
 .modal {
@@ -110,12 +119,22 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.modal.show {
+  display: block;
+  animation: modalFadeIn 0.5s forwards;
+}
+
+.modal.hide {
+  animation: modalFadeOut 0.5s forwards;
+}
+
 .modal-content {
   background-color: white;
   margin: 15% auto;
   padding: 40px;
   border-radius: 10px;
   max-width: 500px;
+  width: 90%;
 }
 
 .modal-content h2 {
@@ -136,10 +155,35 @@
   font-size: 1rem;
 }
 
-@keyframes fadeIn {
+.modal-content input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalFadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-50px);
   }
   to {
     opacity: 1;
@@ -147,9 +191,19 @@
   }
 }
 
-.animate-text,
-.room-card {
-  animation: fadeIn 0.5s ease-out forwards;
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+.animate-text {
+  animation: fadeInUp 0.5s forwards;
   opacity: 0;
 }
 
@@ -161,5 +215,17 @@
 
   #room-search {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .modal-content {
+    padding: 20px;
   }
 }

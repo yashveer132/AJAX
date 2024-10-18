@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayRooms(rooms) {
     roomsContainer.innerHTML = "";
-    rooms.forEach((room) => {
+    rooms.forEach((room, index) => {
       const roomCard = document.createElement("div");
       roomCard.classList.add("room-card");
       roomCard.innerHTML = `
@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         </button>
       `;
       roomsContainer.appendChild(roomCard);
+      setTimeout(() => {
+        roomCard.classList.add("show");
+      }, 100 * index);
     });
   }
 
@@ -35,7 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch((error) => console.error("Error loading rooms data:", error));
 
   createRoomBtn.addEventListener("click", () => {
-    createRoomModal.style.display = "block";
+    createRoomModal.classList.add("show");
+    createRoomModal.classList.remove("hide");
   });
 
   createRoomForm.addEventListener("submit", (e) => {
@@ -52,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     displayRooms(studyRooms);
 
-    createRoomModal.style.display = "none";
+    createRoomModal.classList.remove("show");
+    createRoomModal.classList.add("hide");
     createRoomForm.reset();
   });
 
@@ -68,7 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("click", (e) => {
     if (e.target === createRoomModal) {
-      createRoomModal.style.display = "none";
+      createRoomModal.classList.remove("show");
+      createRoomModal.classList.add("hide");
     }
   });
 });

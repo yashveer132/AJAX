@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const mentorsGrid = document.querySelector(".mentors-grid");
   const spotlightContainer = document.querySelector(".spotlight-container");
   const testimonialsContainer = document.querySelector(".testimonial-slider");
-
   const specializationFilter = document.getElementById("specialization-filter");
 
   let mentorsData = [];
@@ -51,8 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <img src="${mentor.image}" alt="${mentor.name}" class="mentor-image" />
       <div class="mentor-info">
         <h3>${mentor.name}</h3>
-        <p class="specialization">${mentor.specialization}</p>
-        
+        <p class="specialization">${mentor.specialization.join(", ")}</p>
         <p class="bio">${mentor.bio}</p>
       </div>
       <a href="booking.html" class="book-session-btn">Book a Session</a>
@@ -62,11 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const createSpotlight = (mentor) => {
     return `
-      <img src="${mentor.image}" alt="${mentor.name}" class="spotlight-image animate-image" />
+      <img src="${mentor.image}" alt="${
+      mentor.name
+    }" class="spotlight-image animate-image" />
       <div class="spotlight-content">
         <h3>${mentor.name}</h3>
-        <p class="specialization">${mentor.specialization}</p>
-        
+        <p class="specialization">${mentor.specialization.join(", ")}</p>
         <p class="bio">${mentor.bio}</p>
         <a href="booking.html" class="cta-button animate-button">Book a Special Session</a>
       </div>
@@ -89,7 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const filteredMentors = mentorsData.filter(
       (mentor) =>
         !selectedSpecialization ||
-        mentor.specialization.toLowerCase().includes(selectedSpecialization)
+        mentor.specialization.some((spec) =>
+          spec.toLowerCase().includes(selectedSpecialization)
+        )
     );
 
     displayMentors(filteredMentors);

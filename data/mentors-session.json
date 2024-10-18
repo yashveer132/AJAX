@@ -33,5 +33,40 @@
     "id": "jagdeep-singh",
     "name": "Dr. Jagdeep Singh",
     "specialty": "AI Specialist"
+  },
+  {
+    "id": "manminder-singh",
+    "name": "Dr. Manminder Singh",
+    "specialty": "Digital Image Processing"
+  },
+  {
+    "id": "preetpal-kaur-buttar",
+    "name": "Dr. Preetpal Kaur Buttar",
+    "specialty": "Natural Language Processing"
+  },
+  {
+    "id": "tajinder-singh",
+    "name": "Dr. Tajinder Singh",
+    "specialty": "Deep Learning"
+  },
+  {
+    "id": "utkarsh",
+    "name": "Dr. Utkarsh",
+    "specialty": "Computer Systems Theory"
+  },
+  {
+    "id": "vinod-kumar-verma",
+    "name": "Dr. VINOD KUMAR VERMA",
+    "specialty": "Internet of Things"
+  },
+  {
+    "id": "jaspal-singh",
+    "name": "Jaspal Singh",
+    "specialty": "Cloud Computing"
+  },
+  {
+    "id": "rahul-gautam",
+    "name": "Rahul Gautam",
+    "specialty": "Image Processing"
   }
 ]
