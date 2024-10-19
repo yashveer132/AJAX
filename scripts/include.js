@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Load header and footer components
-  loadComponent("../pages/header.html", "header-placeholder");
-  loadComponent("../pages/footer.html", "footer-placeholder");
+  loadComponent("pages/header.html", "header-placeholder");
+  loadComponent("pages/footer.html", "footer-placeholder");
 
   // Setup mobile menu toggle functionality
   function setupHeader() {
