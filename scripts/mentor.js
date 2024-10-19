@@ -8,35 +8,41 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const sessions = await fetchSessionsData();
 
+  // Render sessions based on their status (upcoming or past)
   const renderSessions = (sessions, container, status) => {
     const filteredSessions = sessions.filter(
       (session) => session.status === status
     );
+
     if (filteredSessions.length === 0) {
       container.innerHTML = "<p>No sessions found.</p>";
       return;
     }
+
     filteredSessions.forEach((session) => {
       const sessionCard = createSessionCard(session);
       container.appendChild(sessionCard);
     });
   };
 
+  // Create a session card dynamically based on session data
   const createSessionCard = (session) => {
     const card = document.createElement("div");
     card.classList.add("session-card", "animate-card");
+
     card.innerHTML = `
-          <h3>${session.topic}</h3>
-          <div class="session-details">
-            <p><strong>Student:</strong> ${session.studentName}</p>
-            <p><strong>Date:</strong> ${session.date}</p>
-            <p><strong>Time:</strong> ${session.time}</p>
-          </div>
-        `;
+      <h3>${session.topic}</h3>
+      <div class="session-details">
+        <p><strong>Student:</strong> ${session.studentName}</p>
+        <p><strong>Date:</strong> ${session.date}</p>
+        <p><strong>Time:</strong> ${session.time}</p>
+      </div>
+    `;
 
     const actionsDiv = document.createElement("div");
     actionsDiv.classList.add("session-actions");
 
+    // Add session-specific actions based on status
     if (session.status === "upcoming") {
       const startLink = document.createElement("a");
       startLink.href = session.meetingLink;
@@ -46,6 +52,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       const cancelButton = document.createElement("button");
       cancelButton.textContent = "Cancel Session";
       cancelButton.classList.add("cancel-button");
+
+      // Attach event listener for session cancellation
       cancelButton.addEventListener("click", () =>
         handleCancelSession(session.id)
       );
@@ -57,6 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       notesLink.href = "#";
       notesLink.textContent = "Add Notes";
       notesLink.classList.add("start-button");
+
       actionsDiv.appendChild(notesLink);
     }
 
@@ -64,6 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return card;
   };
 
+  // Handle session cancellation with confirmation
   const handleCancelSession = (sessionId) => {
     if (
       confirm(
@@ -71,6 +81,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       )
     ) {
       const index = sessions.findIndex((session) => session.id === sessionId);
+
       if (index !== -1) {
         sessions.splice(index, 1);
         upcomingSessionsContainer.innerHTML = "";
@@ -79,6 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   };
 
+  // Fetch session data from a JSON file
   async function fetchSessionsData() {
     try {
       const response = await fetch("../data/sessionsData-mentor.json");
@@ -92,6 +104,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
+  // Render both upcoming and past sessions on page load
   renderSessions(sessions, upcomingSessionsContainer, "upcoming");
   renderSessions(sessions, pastSessionsContainer, "past");
 });

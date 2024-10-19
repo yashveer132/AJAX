@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book a Session - SLIET Mentorship Platform</title>
+
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
@@ -13,6 +14,7 @@
     <div id="header-placeholder"></div>
 
     <main>
+      <!-- Hero Section: Introduction to booking sessions -->
       <section class="hero">
         <h1 class="animate-text">Book Your Mentorship Session</h1>
         <p class="animate-text">
@@ -21,6 +23,7 @@
         </p>
       </section>
 
+      <!-- Booking Process Section: Steps to book a session -->
       <section class="booking-process">
         <h2>Booking Process</h2>
         <div class="process-steps">
@@ -42,9 +45,11 @@
         </div>
       </section>
 
+      <!-- Booking Form Section: Allows users to book a session -->
       <section class="booking-form">
         <h2>Book Your Session</h2>
         <form id="mentorship-booking-form">
+          <!-- Mentor Selection -->
           <div class="form-group animate-form">
             <label for="mentor">Select Mentor:</label>
             <select id="mentor" name="mentor" required>
@@ -60,6 +65,7 @@
             </select>
           </div>
 
+          <!-- Email Input -->
           <div class="form-group animate-form">
             <label for="email">Your Email:</label>
             <input
@@ -71,17 +77,20 @@
             />
           </div>
 
+          <!-- Date Selection -->
           <div class="form-group animate-form">
             <label for="date">Select Date:</label>
             <input type="date" id="date" name="date" required />
           </div>
 
+          <!-- Time Slot Selection -->
           <div class="form-group animate-form">
             <label for="time-slots">Select Time:</label>
             <div id="time-slots" class="time-slots"></div>
             <input type="hidden" id="time" name="time" required />
           </div>
 
+          <!-- Session Topic -->
           <div class="form-group animate-form">
             <label for="topic">Session Topic:</label>
             <input
@@ -93,6 +102,7 @@
             />
           </div>
 
+          <!-- Additional Information -->
           <div class="form-group animate-form">
             <label for="message">Additional Information:</label>
             <textarea
@@ -109,6 +119,7 @@
         </form>
       </section>
 
+      <!-- Tips Section: Suggestions for a successful session -->
       <section class="booking-tips">
         <h2>Tips for a Successful Mentorship Session</h2>
         <ul class="tips-list">
@@ -133,6 +144,7 @@
 
     <div id="footer-placeholder"></div>
 
+    <!-- Booking Confirmation Modal -->
     <div id="booking-confirmation" class="modal">
       <div class="modal-content">
         <h2>Booking Confirmed!</h2>

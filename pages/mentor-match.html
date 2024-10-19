@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find Your Perfect Mentor - SLIET Mentorship Platform</title>
+
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
@@ -13,6 +14,7 @@
     <div id="header-placeholder"></div>
 
     <main>
+      <!-- Hero Section: Introduction to mentor matching -->
       <section class="hero">
         <h1 class="animate-text">Find Your Perfect Mentor</h1>
         <p class="animate-text">
@@ -21,17 +23,23 @@
         </p>
       </section>
 
+      <!-- Quiz Section: Interactive quiz for mentor matching -->
       <section class="quiz-container">
         <div id="quiz-progress" class="quiz-progress"></div>
+
+        <!-- Question container with dynamic content -->
         <div id="question-container" class="question-container">
           <h2 id="question-text">
             Question 1: What is your primary area of interest?
           </h2>
           <div id="answer-buttons" class="answer-buttons"></div>
         </div>
+
+        <!-- Button to navigate through quiz questions -->
         <button id="next-btn" class="next-btn">Next</button>
       </section>
 
+      <!-- Result Section: Displays mentor match and call-to-action -->
       <section
         id="result-container"
         class="result-container"

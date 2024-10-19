@@ -2,19 +2,19 @@
   {
     "title": "Expert Guidance",
     "description": "Get personalized advice from experienced CS faculty",
-    "image": "images/expert1.png",
+    "image": "images/expert-advice.png",
     "alt": "Expert Guidance"
   },
   {
     "title": "Flexible Scheduling",
     "description": "Book sessions that fit your timetable",
-    "image": "images/flexible.png",
+    "image": "images/flexible-scheduling.png",
     "alt": "Flexible Scheduling"
   },
   {
     "title": "Career Support",
     "description": "Gain insights to shape your professional future",
-    "image": "images/career.png",
+    "image": "images/career-support.png",
     "alt": "Career Support"
   }
 ]

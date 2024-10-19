@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virtual Study Rooms - SLIET Mentorship Platform</title>
+
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
@@ -13,6 +14,7 @@
     <div id="header-placeholder"></div>
 
     <main>
+      <!-- Hero Section: Introduction to Study Rooms -->
       <section class="hero">
         <h1 class="animate-text">Virtual Study Rooms</h1>
         <p class="animate-text">
@@ -21,6 +23,7 @@
         </p>
       </section>
 
+      <!-- Actions Section: Create room and search functionality -->
       <section class="room-actions">
         <button id="create-room-btn" class="cta-button">
           Create a New Room
@@ -28,11 +31,13 @@
         <input type="text" id="room-search" placeholder="Search rooms..." />
       </section>
 
+      <!-- Room List Section: Displays available study rooms -->
       <section class="room-list">
         <h2>Available Study Rooms</h2>
         <div id="rooms-container" class="rooms-container"></div>
       </section>
 
+      <!-- Modal for Creating a New Room -->
       <div id="create-room-modal" class="modal">
         <div class="modal-content">
           <h2>Create a New Study Room</h2>

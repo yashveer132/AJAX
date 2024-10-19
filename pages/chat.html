@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat - SLIET Mentorship Platform</title>
+
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/footer.css" />
@@ -11,7 +12,9 @@
   </head>
   <body>
     <div id="header-placeholder"></div>
+
     <main>
+      <!-- Hero Section: Introduction to the chat feature -->
       <section class="hero">
         <h1 class="animate-text">Chat with Your Mentor</h1>
         <p class="animate-text">
@@ -20,7 +23,9 @@
         </p>
       </section>
 
+      <!-- Chat Section: Contains chat sidebar and main chat area -->
       <section class="chat-container">
+        <!-- Sidebar: List of mentors available for chat -->
         <div class="chat-sidebar">
           <h2>Your Mentors</h2>
           <ul id="mentor-list">
@@ -103,8 +108,11 @@
             </li>
           </ul>
         </div>
+
+        <!-- Main Chat Area: Display messages and input for sending new messages -->
         <div class="chat-main">
           <div id="chat-messages" class="chat-messages"></div>
+
           <form id="chat-form" class="chat-input">
             <input
               type="text"
@@ -113,12 +121,13 @@
               required
             />
             <button type="submit">
-              <img src="../images/send.png" alt="Send" />
+              <img src="../images/send-button.png" alt="Send" />
             </button>
           </form>
         </div>
       </section>
 
+      <!-- Chat Tips Section: Best practices for effective communication -->
       <section class="chat-tips">
         <h2>Tips for Effective Communication</h2>
         <ul class="tips-list">
