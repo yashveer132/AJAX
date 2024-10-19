@@ -68,22 +68,34 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-    // Pause animations initially and start observing elements
     elementsToAnimate.forEach((element) => {
       element.style.animationPlayState = "paused";
       observer.observe(element);
     });
   };
 
-  // Change header style based on scroll position
-  const header = document.querySelector("header");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  });
+  // Wait until the header and footer are loaded dynamically
+  const waitForHeaderAndFooter = () => {
+    const intervalId = setInterval(() => {
+      const header = document.querySelector("header");
+      if (header) {
+        setupHeaderScrollEffect(header);
+        clearInterval(intervalId);
+      }
+    }, 100);
+  };
+
+  const setupHeaderScrollEffect = (header) => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  };
+
+  waitForHeaderAndFooter();
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
