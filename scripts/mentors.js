@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let mentorsData = [];
   const bookedSlotsData = {};
 
-  // Load mentors and testimonials data concurrently
   Promise.all([
     fetch("../data/mentors.json").then((res) => res.json()),
     fetch("../data/testimonials.json").then((res) => res.json()),
@@ -21,14 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => console.error("Error loading data:", error));
 
-  // Generate random booked slots for all mentors
   const generateBookedSlotsData = () => {
     mentorsData.forEach((mentor) => {
       bookedSlotsData[mentor.id] = generateRandomBookedSlots();
     });
   };
 
-  // Generate random booked time slots (2-4 random slots)
   const generateRandomBookedSlots = () => {
     const bookedSlots = [];
     const allSlots = Array.from({ length: 9 }, (_, i) => `${i + 9}:00`);
@@ -43,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return bookedSlots;
   };
 
-  // Render mentors in the grid
   const displayMentors = (mentors) => {
     mentorsGrid.innerHTML = "";
     mentors.forEach((mentor) => {
@@ -52,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Display the spotlight mentor (if one exists)
   const displaySpotlight = (mentors) => {
     const spotlightMentor = mentors.find(
       (mentor) => mentor.spotlight === "yes"
@@ -63,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Render testimonials dynamically
   const displayTestimonials = (testimonials) => {
     testimonials.forEach((testimonial) => {
       const testimonialElement = createTestimonial(testimonial);
@@ -71,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Create a mentor card element
   const createMentorCard = (mentor) => {
     const card = document.createElement("div");
     card.classList.add("mentor-card", "animate-card");
@@ -93,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return card;
   };
 
-  // Generate HTML for mentor time slots
   const generateTimeSlotsHtml = (mentor) => {
     const bookedSlots = bookedSlotsData[mentor.id] || [];
     let timeSlotsHtml = "";
@@ -108,7 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return timeSlotsHtml;
   };
 
-  // Create spotlight mentor section
   const createSpotlight = (mentor) => {
     const timeSlotsHtml = generateTimeSlotsHtml(mentor);
 
@@ -128,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   };
 
-  // Create testimonial element
   const createTestimonial = (testimonial) => {
     const testimonialDiv = document.createElement("div");
     testimonialDiv.classList.add("testimonial", "animate-testimonial");
@@ -140,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return testimonialDiv;
   };
 
-  // Filter mentors based on selected specialization
   specializationFilter.addEventListener("change", () => {
     const selectedSpecialization = specializationFilter.value.toLowerCase();
 

@@ -4,11 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageInput = document.getElementById("message-input");
   const mentorList = document.getElementById("mentor-list");
 
-  // Default mentor and mentor responses storage
   let currentMentor = "birmohan-singh";
   let mentorResponses = {};
 
-  // Load mentor responses from external JSON
   fetch("../data/mentor-responses.json")
     .then((response) => {
       if (!response.ok) {
@@ -22,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => console.error("Error loading mentor responses:", error));
 
-  // Add a message to the chat (sent or received)
   const addMessage = (content, isSent) => {
     const messageElement = document.createElement("div");
     messageElement.classList.add("message", isSent ? "sent" : "received");
@@ -31,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     chatMessages.scrollTop = chatMessages.scrollHeight;
   };
 
-  // Handle message submission from the chat form
   chatForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const message = messageInput.value.trim();
@@ -40,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       addMessage(message, true);
       messageInput.value = "";
 
-      // Simulate mentor response after a short delay
       setTimeout(() => {
         const responses = mentorResponses[currentMentor];
 
@@ -55,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Handle mentor selection from the list
   mentorList.addEventListener("click", (e) => {
     const mentorItem = e.target.closest(".mentor-item");
 
@@ -66,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
       currentMentor = mentorItem.dataset.mentor;
       chatMessages.innerHTML = "";
 
-      // Display a welcome message for the selected mentor
       addMessage(
         `You are now chatting with ${
           mentorItem.querySelector("h3").textContent
@@ -76,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Intersection observer to animate tips on scroll
   const tips = document.querySelectorAll(".animate-tip");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

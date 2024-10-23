@@ -11,10 +11,35 @@
     <link rel="stylesheet" href="../styles/booking.css" />
   </head>
   <body>
-    <div id="header-placeholder"></div>
+    <header>
+      <nav>
+        <a href="../index.html" class="logo">
+          <img
+            src="../images/mentorship Logo.jpg"
+            alt="SLIET Mentorship Logo"
+            class="logo-image"
+          />
+          <span>SLIET Mentorship</span>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav no-search">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/mentors.html">Mentors</a></li>
+          <li><a href="../pages/booking.html">Book a Session</a></li>
+          <li><a href="../pages/chat.html">Chat</a></li>
+          <li><a href="../pages/mentor-match.html">Mentor Match</a></li>
+          <li><a href="../pages/study-rooms.html">Study Rooms</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
-      <!-- Hero Section: Introduction to booking sessions -->
       <section class="hero">
         <h1 class="animate-text">Book Your Mentorship Session</h1>
         <p class="animate-text">
@@ -23,7 +48,6 @@
         </p>
       </section>
 
-      <!-- Booking Process Section: Steps to book a session -->
       <section class="booking-process">
         <h2>Booking Process</h2>
         <div class="process-steps">
@@ -45,11 +69,9 @@
         </div>
       </section>
 
-      <!-- Booking Form Section: Allows users to book a session -->
       <section class="booking-form">
         <h2>Book Your Session</h2>
         <form id="mentorship-booking-form">
-          <!-- Mentor Selection -->
           <div class="form-group animate-form">
             <label for="mentor">Select Mentor:</label>
             <select id="mentor" name="mentor" required>
@@ -65,7 +87,6 @@
             </select>
           </div>
 
-          <!-- Email Input -->
           <div class="form-group animate-form">
             <label for="email">Your Email:</label>
             <input
@@ -77,20 +98,17 @@
             />
           </div>
 
-          <!-- Date Selection -->
           <div class="form-group animate-form">
             <label for="date">Select Date:</label>
             <input type="date" id="date" name="date" required />
           </div>
 
-          <!-- Time Slot Selection -->
           <div class="form-group animate-form">
             <label for="time-slots">Select Time:</label>
             <div id="time-slots" class="time-slots"></div>
             <input type="hidden" id="time" name="time" required />
           </div>
 
-          <!-- Session Topic -->
           <div class="form-group animate-form">
             <label for="topic">Session Topic:</label>
             <input
@@ -102,7 +120,6 @@
             />
           </div>
 
-          <!-- Additional Information -->
           <div class="form-group animate-form">
             <label for="message">Additional Information:</label>
             <textarea
@@ -119,7 +136,6 @@
         </form>
       </section>
 
-      <!-- Tips Section: Suggestions for a successful session -->
       <section class="booking-tips">
         <h2>Tips for a Successful Mentorship Session</h2>
         <ul class="tips-list">
@@ -142,9 +158,43 @@
       </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/mentors.html">Mentors</a></li>
+            <li><a href="../pages/booking.html">Book a Session</a></li>
+            <li><a href="../pages/chat.html">Chat</a></li>
+            <li><a href="../pages/mentor-match.html">Mentor Match</a></li>
+            <li><a href="../pages/study-rooms.html">Study Rooms</a></li>
+          </ul>
+        </div>
 
-    <!-- Booking Confirmation Modal -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: mentorship@sliet.ac.in</p>
+          <p>Phone: +91 1234567890</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/" class="social-icon">
+              <img src="../images/facebook-icon.png" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/" class="social-icon">
+              <img src="../images/twitter-icon.png" alt="Twitter" />
+            </a>
+            <a href="https://www.linkedin.com/" class="social-icon">
+              <img src="../images/linkedin-icon.png" alt="LinkedIn" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <div id="booking-confirmation" class="modal">
       <div class="modal-content">
         <h2>Booking Confirmed!</h2>
@@ -157,7 +207,7 @@
       </div>
     </div>
 
-    <script src="../scripts/include.js"></script>
+    <script src="../scripts/header.js"></script>
     <script src="../scripts/booking.js"></script>
   </body>
 </html>

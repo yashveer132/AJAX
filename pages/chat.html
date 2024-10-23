@@ -11,10 +11,35 @@
     <link rel="stylesheet" href="../styles/chat.css" />
   </head>
   <body>
-    <div id="header-placeholder"></div>
+    <header>
+      <nav>
+        <a href="../index.html" class="logo">
+          <img
+            src="../images/mentorship Logo.jpg"
+            alt="SLIET Mentorship Logo"
+            class="logo-image"
+          />
+          <span>SLIET Mentorship</span>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav no-search">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/mentors.html">Mentors</a></li>
+          <li><a href="../pages/booking.html">Book a Session</a></li>
+          <li><a href="../pages/chat.html">Chat</a></li>
+          <li><a href="../pages/mentor-match.html">Mentor Match</a></li>
+          <li><a href="../pages/study-rooms.html">Study Rooms</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
-      <!-- Hero Section: Introduction to the chat feature -->
       <section class="hero">
         <h1 class="animate-text">Chat with Your Mentor</h1>
         <p class="animate-text">
@@ -23,9 +48,7 @@
         </p>
       </section>
 
-      <!-- Chat Section: Contains chat sidebar and main chat area -->
       <section class="chat-container">
-        <!-- Sidebar: List of mentors available for chat -->
         <div class="chat-sidebar">
           <h2>Your Mentors</h2>
           <ul id="mentor-list">
@@ -109,7 +132,6 @@
           </ul>
         </div>
 
-        <!-- Main Chat Area: Display messages and input for sending new messages -->
         <div class="chat-main">
           <div id="chat-messages" class="chat-messages"></div>
 
@@ -127,7 +149,6 @@
         </div>
       </section>
 
-      <!-- Chat Tips Section: Best practices for effective communication -->
       <section class="chat-tips">
         <h2>Tips for Effective Communication</h2>
         <ul class="tips-list">
@@ -146,9 +167,44 @@
       </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/mentors.html">Mentors</a></li>
+            <li><a href="../pages/booking.html">Book a Session</a></li>
+            <li><a href="../pages/chat.html">Chat</a></li>
+            <li><a href="../pages/mentor-match.html">Mentor Match</a></li>
+            <li><a href="../pages/study-rooms.html">Study Rooms</a></li>
+          </ul>
+        </div>
 
-    <script src="../scripts/include.js"></script>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: mentorship@sliet.ac.in</p>
+          <p>Phone: +91 1234567890</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/" class="social-icon">
+              <img src="../images/facebook-icon.png" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/" class="social-icon">
+              <img src="../images/twitter-icon.png" alt="Twitter" />
+            </a>
+            <a href="https://www.linkedin.com/" class="social-icon">
+              <img src="../images/linkedin-icon.png" alt="LinkedIn" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/header.js"></script>
     <script src="../scripts/chat.js"></script>
   </body>
 </html>

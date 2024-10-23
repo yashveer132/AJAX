@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const sessions = await fetchSessionsData();
 
-  // Renders sessions based on status (upcoming or past) into the respective container
   const renderSessions = (sessions, container, status) => {
     const filteredSessions = sessions.filter(
       (session) => session.status === status
@@ -25,7 +24,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   };
 
-  // Creates a session card element dynamically
   const createSessionCard = (session) => {
     const card = document.createElement("div");
     card.classList.add("session-card", "animate-card");
@@ -41,7 +39,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const actionsDiv = document.createElement("div");
     actionsDiv.classList.add("session-actions");
 
-    // Add actions based on session status
     if (session.status === "upcoming") {
       const joinLink = document.createElement("a");
       joinLink.href = session.meetingLink;
@@ -52,7 +49,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       cancelButton.textContent = "Cancel Session";
       cancelButton.classList.add("cancel-button");
 
-      // Attach event listener to handle session cancellation
       cancelButton.addEventListener("click", () =>
         handleCancelSession(session.id)
       );
@@ -72,7 +68,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     return card;
   };
 
-  // Handles session cancellation with confirmation
   const handleCancelSession = (sessionId) => {
     if (
       confirm(
@@ -89,7 +84,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   };
 
-  // Fetch session data from a JSON file
   async function fetchSessionsData() {
     try {
       const response = await fetch("../data/studentSessionsData.json");
@@ -103,7 +97,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  // Render upcoming and past sessions on page load
   renderSessions(sessions, upcomingSessionsContainer, "upcoming");
   renderSessions(sessions, pastSessionsContainer, "past");
 });

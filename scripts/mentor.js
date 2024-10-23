@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const sessions = await fetchSessionsData();
 
-  // Render sessions based on their status (upcoming or past)
   const renderSessions = (sessions, container, status) => {
     const filteredSessions = sessions.filter(
       (session) => session.status === status
@@ -25,7 +24,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   };
 
-  // Create a session card dynamically based on session data
   const createSessionCard = (session) => {
     const card = document.createElement("div");
     card.classList.add("session-card", "animate-card");
@@ -42,7 +40,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const actionsDiv = document.createElement("div");
     actionsDiv.classList.add("session-actions");
 
-    // Add session-specific actions based on status
     if (session.status === "upcoming") {
       const startLink = document.createElement("a");
       startLink.href = session.meetingLink;
@@ -53,7 +50,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       cancelButton.textContent = "Cancel Session";
       cancelButton.classList.add("cancel-button");
 
-      // Attach event listener for session cancellation
       cancelButton.addEventListener("click", () =>
         handleCancelSession(session.id)
       );
@@ -73,7 +69,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     return card;
   };
 
-  // Handle session cancellation with confirmation
   const handleCancelSession = (sessionId) => {
     if (
       confirm(
@@ -90,7 +85,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   };
 
-  // Fetch session data from a JSON file
   async function fetchSessionsData() {
     try {
       const response = await fetch("../data/sessionsData-mentor.json");
@@ -104,7 +98,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  // Render both upcoming and past sessions on page load
   renderSessions(sessions, upcomingSessionsContainer, "upcoming");
   renderSessions(sessions, pastSessionsContainer, "past");
 });

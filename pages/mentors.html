@@ -11,10 +11,35 @@
     <link rel="stylesheet" href="../styles/mentors.css" />
   </head>
   <body>
-    <div id="header-placeholder"></div>
+    <header>
+      <nav>
+        <a href="../index.html" class="logo">
+          <img
+            src="../images/mentorship Logo.jpg"
+            alt="SLIET Mentorship Logo"
+            class="logo-image"
+          />
+          <span>SLIET Mentorship</span>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav no-search">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/mentors.html">Mentors</a></li>
+          <li><a href="../pages/booking.html">Book a Session</a></li>
+          <li><a href="../pages/chat.html">Chat</a></li>
+          <li><a href="../pages/mentor-match.html">Mentor Match</a></li>
+          <li><a href="../pages/study-rooms.html">Study Rooms</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
-      <!-- Hero Section: Introduction to mentors -->
       <section class="hero">
         <h1 class="animate-text">Our Expert Mentors</h1>
         <p class="animate-text">
@@ -23,7 +48,6 @@
         </p>
       </section>
 
-      <!-- Filter Section: Allows filtering mentors by specialization -->
       <section class="mentor-filters">
         <h2>Find Your Mentor</h2>
         <div class="filter-container">
@@ -46,25 +70,57 @@
         </div>
       </section>
 
-      <!-- Mentors Grid Section: Displays list of available mentors -->
       <section class="mentors-grid"></section>
 
-      <!-- Mentor Spotlight Section: Highlight a specific mentor -->
       <section class="mentor-spotlight">
         <h2>Mentor Spotlight</h2>
         <div class="spotlight-container"></div>
       </section>
 
-      <!-- Testimonials Section: Feedback from students -->
       <section class="testimonials">
         <h2>What Students Say About Our Mentors</h2>
         <div class="testimonial-slider"></div>
       </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/mentors.html">Mentors</a></li>
+            <li><a href="../pages/booking.html">Book a Session</a></li>
+            <li><a href="../pages/chat.html">Chat</a></li>
+            <li><a href="../pages/mentor-match.html">Mentor Match</a></li>
+            <li><a href="../pages/study-rooms.html">Study Rooms</a></li>
+          </ul>
+        </div>
 
-    <script src="../scripts/include.js"></script>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: mentorship@sliet.ac.in</p>
+          <p>Phone: +91 1234567890</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/" class="social-icon">
+              <img src="../images/facebook-icon.png" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/" class="social-icon">
+              <img src="../images/twitter-icon.png" alt="Twitter" />
+            </a>
+            <a href="https://www.linkedin.com/" class="social-icon">
+              <img src="../images/linkedin-icon.png" alt="LinkedIn" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/header.js"></script>
     <script src="../scripts/mentors.js"></script>
   </body>
 </html>

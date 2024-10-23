@@ -4,19 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
     ".testimonial-container"
   );
 
-  // Fetch and display features data from JSON
   fetch("data/features.json")
     .then((response) => response.json())
     .then((features) => displayFeatures(features))
     .catch((error) => console.error("Error loading features:", error));
 
-  // Fetch and display testimonials data from JSON
   fetch("data/testimonials-home.json")
     .then((response) => response.json())
     .then((testimonials) => displayTestimonials(testimonials))
     .catch((error) => console.error("Error loading testimonials:", error));
 
-  // Dynamically generate and display features
   const displayFeatures = (features) => {
     features.forEach((feature) => {
       const featureDiv = document.createElement("div");
@@ -31,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     animateOnScroll();
   };
 
-  // Dynamically generate and display testimonials
   const displayTestimonials = (testimonials) => {
     testimonials.forEach((testimonial) => {
       const testimonialDiv = document.createElement("div");
@@ -47,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     animateOnScroll();
   };
 
-  // Animate elements when they enter the viewport
   const animateOnScroll = () => {
     const elementsToAnimate = document.querySelectorAll(
       ".animate-feature, .animate-testimonial"
@@ -74,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Wait until the header and footer are loaded dynamically
   const waitForHeaderAndFooter = () => {
     const intervalId = setInterval(() => {
       const header = document.querySelector("header");
@@ -97,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   waitForHeaderAndFooter();
 
-  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();

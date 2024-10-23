@@ -11,10 +11,35 @@
     <link rel="stylesheet" href="../styles/student.css" />
   </head>
   <body>
-    <div id="header-placeholder"></div>
+    <header>
+      <nav>
+        <a href="../index.html" class="logo">
+          <img
+            src="../images/mentorship Logo.jpg"
+            alt="SLIET Mentorship Logo"
+            class="logo-image"
+          />
+          <span>SLIET Mentorship</span>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav no-search">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/mentors.html">Mentors</a></li>
+          <li><a href="../pages/booking.html">Book a Session</a></li>
+          <li><a href="../pages/chat.html">Chat</a></li>
+          <li><a href="../pages/mentor-match.html">Mentor Match</a></li>
+          <li><a href="../pages/study-rooms.html">Study Rooms</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
-      <!-- Dashboard Hero Section: Introduction to the student dashboard -->
       <section class="dashboard-hero">
         <h1>Welcome</h1>
         <p>
@@ -23,19 +48,16 @@
         </p>
       </section>
 
-      <!-- Upcoming Sessions Section: List of future booked sessions -->
       <section class="upcoming-sessions">
         <h2>Upcoming Sessions</h2>
         <div class="sessions-container" id="upcoming-sessions-container"></div>
       </section>
 
-      <!-- Past Sessions Section: List of completed sessions -->
       <section class="past-sessions">
         <h2>Past Sessions</h2>
         <div class="sessions-container" id="past-sessions-container"></div>
       </section>
 
-      <!-- Book a New Session Section: Call-to-action for booking more sessions -->
       <section class="book-new-session">
         <h2>Book a New Session</h2>
         <p>Need more guidance? Book a new session with our mentors.</p>
@@ -43,9 +65,44 @@
       </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/mentors.html">Mentors</a></li>
+            <li><a href="../pages/booking.html">Book a Session</a></li>
+            <li><a href="../pages/chat.html">Chat</a></li>
+            <li><a href="../pages/mentor-match.html">Mentor Match</a></li>
+            <li><a href="../pages/study-rooms.html">Study Rooms</a></li>
+          </ul>
+        </div>
 
-    <script src="../scripts/include.js"></script>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: mentorship@sliet.ac.in</p>
+          <p>Phone: +91 1234567890</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/" class="social-icon">
+              <img src="../images/facebook-icon.png" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/" class="social-icon">
+              <img src="../images/twitter-icon.png" alt="Twitter" />
+            </a>
+            <a href="https://www.linkedin.com/" class="social-icon">
+              <img src="../images/linkedin-icon.png" alt="LinkedIn" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/header.js"></script>
     <script type="module" src="../scripts/student.js"></script>
   </body>
 </html>

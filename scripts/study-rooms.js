@@ -5,9 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const roomsContainer = document.getElementById("rooms-container");
   const roomSearch = document.getElementById("room-search");
 
-  let studyRooms = []; // Holds the list of study rooms
+  let studyRooms = [];
 
-  // Function to render the room cards dynamically
   function displayRooms(rooms) {
     roomsContainer.innerHTML = "";
     rooms.forEach((room, index) => {
@@ -25,14 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       roomsContainer.appendChild(roomCard);
 
-      // Add animation effect with staggered timing
       setTimeout(() => {
         roomCard.classList.add("show");
       }, 100 * index);
     });
   }
 
-  // Fetch study rooms data from a JSON file
   fetch("../data/study-rooms.json")
     .then((response) => response.json())
     .then((data) => {
@@ -41,13 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => console.error("Error loading rooms data:", error));
 
-  // Open the "Create Room" modal
   createRoomBtn.addEventListener("click", () => {
     createRoomModal.classList.add("show");
     createRoomModal.classList.remove("hide");
   });
 
-  // Handle room creation form submission
   createRoomForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -62,13 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
     studyRooms.unshift(newRoom);
     displayRooms(studyRooms);
 
-    // Reset modal and form after submission
     createRoomModal.classList.remove("show");
     createRoomModal.classList.add("hide");
     createRoomForm.reset();
   });
 
-  // Filter rooms based on search input
   roomSearch.addEventListener("input", (e) => {
     const searchTerm = e.target.value.toLowerCase();
     const filteredRooms = studyRooms.filter(
@@ -79,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     displayRooms(filteredRooms);
   });
 
-  // Close the modal when clicking outside of it
   window.addEventListener("click", (e) => {
     if (e.target === createRoomModal) {
       createRoomModal.classList.remove("show");

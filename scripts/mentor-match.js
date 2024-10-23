@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentQuestionIndex = 0;
   let userResponses = [];
 
-  // Fetch quiz questions and mentor data
   function fetchData() {
     Promise.all([
       fetch("../data/quiz-questions.json").then((res) => res.json()),
@@ -26,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((error) => console.error("Error loading data:", error));
   }
 
-  // Start the quiz by resetting states and showing the first question
   function startQuiz() {
     currentQuestionIndex = 0;
     userResponses = [];
@@ -36,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProgress();
   }
 
-  // Display the current question and its answers
   function showQuestion(question) {
     questionText.textContent = `Question ${currentQuestionIndex + 1}: ${
       question.question
@@ -53,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Handle answer selection and display the next button
   function selectAnswer(e) {
     const selectedButton = e.target;
     Array.from(answerButtons.getElementsByTagName("button")).forEach((button) =>
@@ -63,13 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
     nextButton.style.display = "block";
   }
 
-  // Update the quiz progress bar
   function updateProgress() {
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
     quizProgress.style.setProperty("--progress", `${progress}%`);
   }
 
-  // Handle the next button click and move to the next question or show the result
   nextButton.addEventListener("click", () => {
     const selectedAnswer = answerButtons.querySelector(".selected");
 
@@ -87,19 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Display the quiz result and mentor match based on user's responses
   function showResult() {
     questionContainer.style.display = "none";
     nextButton.style.display = "none";
     resultContainer.style.display = "block";
 
-    // Find a mentor matching user's responses or pick one randomly
     const matchedMentor =
       mentors.find((mentor) =>
         mentor.specialty.some((specialty) => userResponses.includes(specialty))
       ) || mentors[Math.floor(Math.random() * mentors.length)];
 
-    // Display matched mentor details
     mentorMatchResult.innerHTML = `
       <img src="${matchedMentor.image}" alt="${matchedMentor.name}">
       <h3>${matchedMentor.name}</h3>

@@ -11,10 +11,35 @@
     <link rel="stylesheet" href="../styles/mentor-match.css" />
   </head>
   <body>
-    <div id="header-placeholder"></div>
+    <header>
+      <nav>
+        <a href="../index.html" class="logo">
+          <img
+            src="../images/mentorship Logo.jpg"
+            alt="SLIET Mentorship Logo"
+            class="logo-image"
+          />
+          <span>SLIET Mentorship</span>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav no-search">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/mentors.html">Mentors</a></li>
+          <li><a href="../pages/booking.html">Book a Session</a></li>
+          <li><a href="../pages/chat.html">Chat</a></li>
+          <li><a href="../pages/mentor-match.html">Mentor Match</a></li>
+          <li><a href="../pages/study-rooms.html">Study Rooms</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
-      <!-- Hero Section: Introduction to mentor matching -->
       <section class="hero">
         <h1 class="animate-text">Find Your Perfect Mentor</h1>
         <p class="animate-text">
@@ -23,11 +48,9 @@
         </p>
       </section>
 
-      <!-- Quiz Section: Interactive quiz for mentor matching -->
       <section class="quiz-container">
         <div id="quiz-progress" class="quiz-progress"></div>
 
-        <!-- Question container with dynamic content -->
         <div id="question-container" class="question-container">
           <h2 id="question-text">
             Question 1: What is your primary area of interest?
@@ -35,11 +58,9 @@
           <div id="answer-buttons" class="answer-buttons"></div>
         </div>
 
-        <!-- Button to navigate through quiz questions -->
         <button id="next-btn" class="next-btn">Next</button>
       </section>
 
-      <!-- Result Section: Displays mentor match and call-to-action -->
       <section
         id="result-container"
         class="result-container"
@@ -51,9 +72,44 @@
       </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/mentors.html">Mentors</a></li>
+            <li><a href="../pages/booking.html">Book a Session</a></li>
+            <li><a href="../pages/chat.html">Chat</a></li>
+            <li><a href="../pages/mentor-match.html">Mentor Match</a></li>
+            <li><a href="../pages/study-rooms.html">Study Rooms</a></li>
+          </ul>
+        </div>
 
-    <script src="../scripts/include.js"></script>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: mentorship@sliet.ac.in</p>
+          <p>Phone: +91 1234567890</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/" class="social-icon">
+              <img src="../images/facebook-icon.png" alt="Facebook" />
+            </a>
+            <a href="https://twitter.com/" class="social-icon">
+              <img src="../images/twitter-icon.png" alt="Twitter" />
+            </a>
+            <a href="https://www.linkedin.com/" class="social-icon">
+              <img src="../images/linkedin-icon.png" alt="LinkedIn" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/header.js"></script>
     <script src="../scripts/mentor-match.js"></script>
   </body>
 </html>

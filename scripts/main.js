@@ -8,14 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Parallax scrolling effect for the hero section background
   const hero = document.querySelector(".hero");
   window.addEventListener("scroll", () => {
     const scrollPosition = window.pageYOffset;
     hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
   });
 
-  // Animate features as they appear in the viewport
   const features = document.querySelectorAll(".feature");
   const animateFeatures = () => {
     const triggerBottom = (window.innerHeight / 5) * 4;
@@ -33,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Retrieve user achievements from local storage or initialize default values
   let userAchievements = JSON.parse(
     localStorage.getItem("userAchievements")
   ) || {
@@ -42,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     studyRoomsJoined: 0,
   };
 
-  // Update achievements based on user actions
   function updateAchievements(action) {
     switch (action) {
       case "attendSession":
@@ -62,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("userAchievements", JSON.stringify(userAchievements));
   }
 
-  // Check if the user has reached an achievement level
   function checkAchievement(type, levels) {
     const value = userAchievements[type];
     for (let level of levels) {
@@ -73,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Display a popup when an achievement is unlocked
   function showAchievementPopup(type, level) {
     const popup = document.createElement("div");
     popup.classList.add("achievement-popup");
@@ -85,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => popup.remove(), 5000);
   }
 
-  // Get the title of the unlocked achievement based on type and level
   function getAchievementTitle(type, level) {
     const titles = {
       sessionsAttended: [
